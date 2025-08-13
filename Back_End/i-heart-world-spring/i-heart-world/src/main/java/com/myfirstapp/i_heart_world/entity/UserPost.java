@@ -41,7 +41,7 @@ public class UserPost {
     private Date lastUpdated;
 
     @ManyToOne
-    @JoinColumn(name = "post_id", nullable = false)
+    @JoinColumn(name = "post_id")
     private User user;
 
 }

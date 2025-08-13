@@ -29,6 +29,9 @@ public class User {
     @Column(name = "about")
     private String about;
 
+    @Column(name = "email")
+    private String email;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Set<UserPost> userPosts;
 
