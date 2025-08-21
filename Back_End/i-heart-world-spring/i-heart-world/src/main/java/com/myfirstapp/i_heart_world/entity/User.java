@@ -35,4 +35,7 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private Set<UserPost> userPosts;
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
+    private Set<GroupPost> groupPosts;
+
 }

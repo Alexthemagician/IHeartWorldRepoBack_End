@@ -1,5 +1,7 @@
 package com.myfirstapp.i_heart_world.config;
 
+import com.myfirstapp.i_heart_world.entity.Group;
+import com.myfirstapp.i_heart_world.entity.GroupPost;
 import com.myfirstapp.i_heart_world.entity.User;
 import com.myfirstapp.i_heart_world.entity.UserPost;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +16,8 @@ public class RestDataConfig implements RepositoryRestConfigurer {
     public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config, CorsRegistry cors) {
         config.exposeIdsFor(User.class);
         config.exposeIdsFor(UserPost.class);
+        config.exposeIdsFor(Group.class);
+        config.exposeIdsFor(GroupPost.class);
         config.setDefaultPageSize(Integer.MAX_VALUE);
         config.setMaxPageSize(Integer.MAX_VALUE);
     }
