@@ -7,7 +7,7 @@ import lombok.Setter;
 import java.util.Date;
 
 @Entity
-@Table(name = "group")
+@Table(name = "`group`")
 @Getter
 @Setter
 public class Group {
@@ -15,7 +15,7 @@ public class Group {
     @Id
     @GeneratedValue
     @Column(name = "group_id")
-    private String groupId;
+    private Long groupId;
 
     @Column(name = "group_name")
     private String groupName;
@@ -31,4 +31,7 @@ public class Group {
 
     @Column(name = "date_created")
     private Date dateCreated;
+
+    @Column(name = "members")
+    private String members;
 }
