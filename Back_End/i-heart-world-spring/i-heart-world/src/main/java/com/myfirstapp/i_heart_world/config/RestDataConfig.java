@@ -1,9 +1,6 @@
 package com.myfirstapp.i_heart_world.config;
 
-import com.myfirstapp.i_heart_world.entity.Group;
-import com.myfirstapp.i_heart_world.entity.GroupPost;
-import com.myfirstapp.i_heart_world.entity.User;
-import com.myfirstapp.i_heart_world.entity.UserPost;
+import com.myfirstapp.i_heart_world.entity.*;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
@@ -18,6 +15,7 @@ public class RestDataConfig implements RepositoryRestConfigurer {
         config.exposeIdsFor(UserPost.class);
         config.exposeIdsFor(Group.class);
         config.exposeIdsFor(GroupPost.class);
+        config.exposeIdsFor(GroupMembers.class);
         config.setDefaultPageSize(Integer.MAX_VALUE);
         config.setMaxPageSize(Integer.MAX_VALUE);
     }
