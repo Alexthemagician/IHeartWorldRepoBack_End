@@ -40,6 +40,6 @@ public class GroupPost {
     private Date lastUpdated;
 
     @ManyToOne
-    @JoinColumn(name = "group_post_id")
+    @JoinColumn(name = "post_id")
     private User user;
 }

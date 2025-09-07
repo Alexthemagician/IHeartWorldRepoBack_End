@@ -9,14 +9,18 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/groupPosts")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin
 public class GroupPostController {
 
     @Autowired
     private GroupPostRepository groupPostRepository;
     private GroupPost groupPost;
 
-    @PostMapping("/api/groupPosts")
+    @GetMapping
+    public java.util.List<GroupPost> getAllGroupPosts() {
+        return groupPostRepository.findAll();
+    }
+    @PostMapping
     public GroupPost createGroupPost(@RequestBody GroupPost groupPost) {
         this.groupPost = groupPost;
         return groupPostRepository.save(groupPost);
