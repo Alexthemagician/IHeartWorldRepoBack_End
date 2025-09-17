@@ -39,6 +39,10 @@ public class GroupPost {
     @UpdateTimestamp
     private Date lastUpdated;
 
+
+    @Column(name = "group_id")
+    private Long groupId;
+
     @ManyToOne
     @JoinColumn(name = "post_id")
     private User user;
