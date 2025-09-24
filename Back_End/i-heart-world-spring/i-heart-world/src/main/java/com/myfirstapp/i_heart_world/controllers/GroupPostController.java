@@ -39,4 +39,6 @@ public class GroupPostController {
         return groupPost.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+
 }

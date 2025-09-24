@@ -23,6 +23,12 @@ public class UserPost {
     @Column(name = "user_id")
     private String userId;
 
+    @Column(name = "post_category")
+    private String postCategory;
+
+    @Column(name = "post_title")
+    private String postTitle;
+
     @Column(name = "post_text")
     private String postText;
 

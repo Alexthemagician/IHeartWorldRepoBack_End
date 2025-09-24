@@ -37,4 +37,11 @@ public class PostController {
         return userPost.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
+
+    @GetMapping("/by-category")
+    public ResponseEntity<UserPost> getUserPostByCategory(@RequestParam String category) {
+        Optional<UserPost> userPost = userPostRepository.findByPostCategory(category);
+        return userPost.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
 }
