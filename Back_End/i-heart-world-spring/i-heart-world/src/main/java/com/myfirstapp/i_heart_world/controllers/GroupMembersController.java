@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/groupMembers")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin
 public class GroupMembersController {
 
     @Autowired
@@ -26,4 +26,20 @@ public class GroupMembersController {
         this.groupMembers = groupMembers;
         return groupMembersRepository.save(groupMembers);
     }
+
+    @GetMapping("/by-id")
+    public List<GroupMembers> getGroupMembersByGroupId(@RequestParam Long groupId, @RequestParam String memberName) {
+        return groupMembersRepository.findByGroupId(groupId);
+    }
+
+
+    @DeleteMapping
+    public void deleteGroupMember(@RequestParam Long groupId, @RequestParam String memberName) {
+        List<GroupMembers> members = groupMembersRepository.findByGroupId(groupId)
+                .stream()
+                .filter(m -> m.getMemberName().equals(memberName))
+                .toList();
+        members.forEach(groupMembersRepository::delete);
+    }
+
 }
