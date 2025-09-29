@@ -26,8 +26,13 @@ public class MessagesController {
     }
 
     @PostMapping
-    public Messages addMessage(@RequestBody Messages messages, @RequestParam String userName) {
-        messages.setUserName(userName);
+    public Messages addMessage(@RequestBody Messages messages) {
+        this.messages = messages;
+        return messagesRepository.save(messages);
+    }
+
+    @PutMapping
+    public Messages updateMessage(@RequestBody Messages messages) {
         this.messages = messages;
         return messagesRepository.save(messages);
     }
