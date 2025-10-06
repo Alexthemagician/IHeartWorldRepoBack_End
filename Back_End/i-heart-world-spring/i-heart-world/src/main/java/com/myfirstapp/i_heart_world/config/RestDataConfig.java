@@ -17,6 +17,8 @@ public class RestDataConfig implements RepositoryRestConfigurer {
         config.exposeIdsFor(GroupPost.class);
         config.exposeIdsFor(GroupMembers.class);
         config.exposeIdsFor(Messages.class);
+        config.exposeIdsFor(Friends.class);
+        config.exposeIdsFor(Notifications.class);
         config.setDefaultPageSize(Integer.MAX_VALUE);
         config.setMaxPageSize(Integer.MAX_VALUE);
     }
