@@ -39,5 +39,12 @@ public class UserController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/by-userName")
+    public ResponseEntity<User> getUserByUserName(@RequestParam String userName) {
+        Optional<User> user = userRepository.findByUserName(userName);
+        return user.map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
 
 }
