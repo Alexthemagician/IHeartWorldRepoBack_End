@@ -28,7 +28,7 @@ public class GroupMembersController {
     }
 
     @GetMapping("/by-id")
-    public List<GroupMembers> getGroupMembersByGroupId(@RequestParam Long groupId, @RequestParam String memberName) {
+    public List<GroupMembers> getGroupMembersByGroupId(@RequestParam Long groupId, @RequestParam String userId) {
         return groupMembersRepository.findByGroupId(groupId);
     }
 
